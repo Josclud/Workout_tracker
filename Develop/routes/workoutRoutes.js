@@ -1,24 +1,24 @@
 const router = require('express').Router()
-const { Plan } = require('../models')
+const { Workout } = require('../models')
 
 router.post('/workout', (req, res) => {
-  Plan.create({})
-    .then(plan => res.json(plan))
+  Workout.create({})
+    .then(workout => res.json(workout))
     .catch(err => console.log(err))
 })
 
 router.put('/workout/:id', (req, res) => {
-  Plan.findByIdAndUpdate(
+  Workout.findByIdAndUpdate(
     req.params.id,
     { $push: { tasks: req.body } },
     { new: true, runValidators: true }
     )
-    .then(plan => res.json(plan))
+    .then(workout => res.json(workout))
     .catch(err => console.log(err))
 })
 
 router.get('/workout', (req, res) => {
-  Plan.aggregate([
+  Workout.aggregate([
     {
       $addFields: {
         totalDuration: {
@@ -27,12 +27,12 @@ router.get('/workout', (req, res) => {
       }
     }
   ])
-    .then(plans => res.json(plans))
+    .then(workouts => res.json(workouts))
     .catch(err => console.log(err))
 })
 
 router.get('/workout/range', (req, res) => {
-  Plan.aggregate([
+  Workout.aggregate([
     {
       $addFields: {
         totalDuration: {
@@ -43,12 +43,12 @@ router.get('/workout/range', (req, res) => {
   ])
   .sort({ _id: -1 })
   .limit(7)
-  .then(plans => res.json(plans))
+    .then(workouts => res.json(workouts))
   .catch(err => console.log(err))
 })
 
 router.delete('/workout', (req, res) => {
-  Plan.findByIdAndDelete(req.body.id)
+  Workout.findByIdAndDelete(req.body.id)
     .then(() => res.json(true))
     .catch(err => console.log(err))
 })
