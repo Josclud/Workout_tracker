@@ -1,4 +1,4 @@
-const { Plan } = require('../models')
+const { Workout } = require('../models')
 
 const planSeed = [
   {
