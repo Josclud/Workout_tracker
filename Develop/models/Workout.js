@@ -5,16 +5,16 @@ const Workout = new Schema({
     type: Date,
     default: () => new Date()
   },
-  tasks: [
+  exercises: [
     {
       name: {
         type: String,
         trim: true,
-        required: 'Enter a task name'
+        required: 'Enter a exercise name'
       },
       duration: {
         type: Number,
-        required: 'Enter a task duration'
+        required: 'Enter a exercise duration'
       }
     }
   ]
