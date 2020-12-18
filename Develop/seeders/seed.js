@@ -29,7 +29,7 @@ const planSeed = [
   }
 ]
 
-require('mongoose').connect('mongodb://localhost/plans_db', {
+require('mongoose').connect('mongodb://localhost/workouts_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

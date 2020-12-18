@@ -1,4 +1,4 @@
-module.exports = require('mongoose').connect('mongodb://localhost/plans_db', {
+module.exports = require('mongoose').connect('mongodb://localhost/Workouts_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

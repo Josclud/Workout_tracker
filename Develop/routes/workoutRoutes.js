@@ -1,13 +1,13 @@
 const router = require('express').Router()
 const { Plan } = require('../models')
 
-router.post('/plans', (req, res) => {
+router.post('/workout', (req, res) => {
   Plan.create({})
     .then(plan => res.json(plan))
     .catch(err => console.log(err))
 })
 
-router.put('/plans/:id', (req, res) => {
+router.put('/workout/:id', (req, res) => {
   Plan.findByIdAndUpdate(
     req.params.id,
     { $push: { tasks: req.body } },
@@ -17,7 +17,7 @@ router.put('/plans/:id', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.get('/plans', (req, res) => {
+router.get('/workout', (req, res) => {
   Plan.aggregate([
     {
       $addFields: {
@@ -31,7 +31,7 @@ router.get('/plans', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.get('/plans/range', (req, res) => {
+router.get('/workout/range', (req, res) => {
   Plan.aggregate([
     {
       $addFields: {
@@ -47,7 +47,7 @@ router.get('/plans/range', (req, res) => {
   .catch(err => console.log(err))
 })
 
-router.delete('/plans', (req, res) => {
+router.delete('/workout', (req, res) => {
   Plan.findByIdAndDelete(req.body.id)
     .then(() => res.json(true))
     .catch(err => console.log(err))
