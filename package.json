@@ -21,6 +21,8 @@
   "homepage": "https://github.com/QFults/Day-Planner#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.8"
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
   }
 }
