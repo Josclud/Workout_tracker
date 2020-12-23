@@ -10,26 +10,31 @@ const Workout = new Schema({
       name: {
         type: String,
         trim: true,
-        required: 'Enter type of workout'
+        required: 'Enter workout name'
       },
-      duration: {
-        type: Number,
-        required: 'Enter a workout duration in minutes'
+      type: {
+        type: String,
+        trim: true,
+        required: 'Enter a type'
       },
       weight: {
         type: Number,
-        required: 'Enter value of weights'
-      },
-      reps: {
-        type: Number,
-        required: 'Enter the amount of reps'
+        required: 'Enter a weight'
       },
       sets: {
         type: Number,
-        required: 'Enter the amount of sets'
+        required: 'Enter how many sets'
+      },
+      reps: {
+        type: Number,
+        required: 'Enter how many reps'
+      },
+      duration: {
+        type: Number,
+        required: 'Enter workout duration'
       }
     }
   ]
-})
+}, { timestamps: true })
 
 module.exports = model('Workout', Workout)
