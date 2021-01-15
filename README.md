@@ -11,7 +11,7 @@
 ## <a name="description"></a>Description
 Welcome to workout tracker. This app allows you to track resistance & cardio workout to help ensure that you are meeting your fitness goals.
 ## <a name="installation"></a>Installation
-npm i
+Deployed app. [Check it out](https://intense-anchorage-28961.herokuapp.com/)
 ## <a name="usage"></a>Usage
 This app is used to track fitness goals
 ## <a name="contributers"></a>Contributers
